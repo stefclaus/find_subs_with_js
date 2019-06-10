@@ -1,0 +1,2 @@
+class Subrequest < ApplicationRecord
+end
