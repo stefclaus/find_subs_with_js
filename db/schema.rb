@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 2019_06_10_204209) do
 
   create_table "subrequests", force: :cascade do |t|
     t.string "comment"
+    t.date "date"
+    t.string "assistant_requesting"
+    t.string "assistant_covering"
     t.integer "assistant_id"
     t.integer "yogaclass_id"
     t.datetime "created_at", null: false
@@ -31,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_204209) do
   create_table "yogaclasses", force: :cascade do |t|
     t.string "name"
     t.string "time"
+    t.string "weekday"
     t.string "instructor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
