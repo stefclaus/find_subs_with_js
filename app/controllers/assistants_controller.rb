@@ -22,7 +22,7 @@ class AssistantsController < ApplicationController
   private
 
   def assistant_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:assistant).permit(:name, :email, :password)
   end
 
 
