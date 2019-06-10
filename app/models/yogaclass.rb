@@ -1,0 +1,2 @@
+class Yogaclass < ApplicationRecord
+end
