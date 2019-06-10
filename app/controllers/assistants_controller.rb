@@ -6,7 +6,7 @@ class AssistantsController < ApplicationController
 
   def create
     @assistant = Assistant.create(assistant_params)
-   # return redirect_to root_path unless @assistant.save
+    return redirect_to root_path unless @assistant.save
     session[:assistant_id] = @assistant.id
     redirect_to assistant_path(@assistant)
   end
@@ -18,9 +18,6 @@ class AssistantsController < ApplicationController
       @assistant = Assistant.find_by(id:params[:id])
     end
 	end
-
-
-
 
   private
 
