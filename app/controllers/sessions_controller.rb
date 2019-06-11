@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @assistant = Assistant.find_by(name: params[:assistant][:name])
+    @assistant = Assistant.find_by(email: params[:assistant][:email])
     @assistant = @assistant.try(:authenticate, params[:assistant][:password])
     return redirect_to root_path unless @assistant
     session[:assistant_id] = @assistant.id

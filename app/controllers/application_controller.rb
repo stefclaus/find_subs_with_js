@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :current_assistant
 
  def current_assistant
-   @assistant = (Assistant.find_by(id: session[:user_id]) || Assistant.new)
+   @assistant = (Assistant.find_by(id: session[:assistant_id]) || Assistant.new)
  end
 
  def logged_in?

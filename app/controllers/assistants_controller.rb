@@ -19,6 +19,7 @@ class AssistantsController < ApplicationController
     end
 	end
 
+  
   private
 
   def assistant_params
