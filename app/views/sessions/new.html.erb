@@ -1,0 +1,8 @@
+<h2>Studio Assistant Sign in! </h2>
+
+<%= form_for @assistant, url: signin_path, method: :post do |f| %>
+  Email: <%= f.email_field :email %>
+  Password: <%= f.password_field :password, id: 'password' %>
+  <%= f.submit "Sign In" %>
+  Or <%= link_to(controller: 'assistants', action: 'new') { 'sign up' } %>
+<% end %>

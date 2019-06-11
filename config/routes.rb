@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :assistants, only: [:index, :show, :create]
+  resources :assistants, only: [:index, :show, :create, :new]
   resources :yogaclasses
   resources :subrequests
 

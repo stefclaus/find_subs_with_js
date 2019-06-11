@@ -1,0 +1,11 @@
+<h2>Studio Assistant Sign Up!</h2>
+
+<%= form_for @assistant do |f| %>
+  Name: <%= f.text_field :name %><br></br>
+  Email: <%= f.text_field :email %><br></br>
+
+  Password: <%= f.password_field :password %><br></br>
+
+
+  <%= f.submit "Create Assistant" %>
+<% end %>
