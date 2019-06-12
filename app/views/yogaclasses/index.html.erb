@@ -1,1 +1,8 @@
 <h2>Here is a list of all of the yogaclasses!</h2>
+
+<% @yogaclasses.each do |yogaclass| %>
+  <%= yogaclass.name %>
+  <%= yogaclass.time %>
+  <%= yogaclass.weekday %>
+  <%= yogaclass.instructor %> <br></br>
+<% end %>
