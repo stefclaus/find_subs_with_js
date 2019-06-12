@@ -1,9 +1,8 @@
 <h2>Here is a list of all current subrequests!</h2>
 
 <% @subrequests.each do |subrequest| %>
-  <%= subrequest.comment %>
-  <%= subrequest.date %>
-  <%= subrequest.assistant_requesting %>
-  <%= subrequest.assistant_covering %>
-  <%= link_to "Go to request page", yogaclass_subrequest_path(subrequest) %><br></br>
+  Comment: <%= subrequest.comment %>
+  Date: <%= subrequest.date %>
+  Assistant requesting: <%= subrequest.assistant_requesting %>
+  Assistant covering: <%= subrequest.assistant_covering %><br></br>
 <% end %>

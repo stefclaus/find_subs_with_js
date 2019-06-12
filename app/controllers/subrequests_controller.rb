@@ -13,6 +13,11 @@ class SubrequestsController < ApplicationController
     @subrequest = Subrequest.find(params[:id])
   end
 
+  def index
+    @subrequests = Subrequest.all
+  end
+
+
   private
 
   def subrequest_params
