@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :assistants, only: [:index, :show, :create, :new]
 
   resources :yogaclasses, only: [:show] do
-    resources :subrequests, only: [:show]
+    resources :subrequests, only: [:show, :index]
   end
 
   resources :yogaclasses, only: [:index, :edit, :new]
