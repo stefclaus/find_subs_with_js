@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
   resources :assistants, only: [:index, :show, :create, :new]
-  resources :yogaclasses
-  resources :subrequests
 
+  resources :yogaclasses, only: [:show] do
+    resources :subrequests, only: [:show]
+  end
+
+  resources :yogaclasses, only: [:index, :edit, :new]
   #one of these will be nested-- get ready for thata
 
   #will need the facebook authorization with this as well
