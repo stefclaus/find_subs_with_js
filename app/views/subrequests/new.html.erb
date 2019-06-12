@@ -5,6 +5,10 @@
   <%= f.collection_select :yogaclass_id, Yogaclass.all, :id, :name,  { include_blank: true }%>
   <br>
   <br>
+  <%= f.label :assistant_id, 'Select Your Name:' %>
+  <%= f.collection_select :assistant_id, Assistant.all, :id, :name,  { include_blank: true }%>
+  <br>
+  <br>
   <%= f.label :comment, 'Comment:' %>
   <%= f.text_area :comment, required: true %>
   <br>
@@ -13,10 +17,8 @@
   <%= f.text_area :date, required: true %>
   <br>
   <br>
-  <%= f.label :assistant_requesting, 'Assistant Requesting:' %>
-  <%= f.text_area :assistant_requesting, required: true %>
-  <br>
-  <br>
+
+
 
 <%= f.submit 'Submit' %>
 	<% end %>
