@@ -4,5 +4,6 @@
   <%= yogaclass.name %>
   <%= yogaclass.time %>
   <%= yogaclass.weekday %>
-  <%= yogaclass.instructor %> <br></br>
+  <%= yogaclass.instructor %>
+  <%= link_to "Go to class page", yogaclass_path(yogaclass) %><br></br>
 <% end %>
