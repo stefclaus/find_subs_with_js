@@ -1,8 +1,8 @@
 <h2>Here is a list of all current subrequests!</h2>
 
 <% @subrequests.each do |subrequest| %>
-  Comment: <%= subrequest.comment %>
-  Date: <%= subrequest.date %>
-  Assistant requesting: <%= subrequest.assistant_requesting %>
+  Comment: <%= subrequest.comment %><br>
+  Date: <%= subrequest.date %><br>
+  Assistant requesting: <%= subrequest.assistant_requesting %><br>
   Assistant covering: <%= subrequest.assistant_covering %><br></br>
 <% end %>
