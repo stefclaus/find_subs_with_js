@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
   resources :assistants, only: [:index, :show, :create, :new]
 
-  resources :yogaclasses, only: [:show] do
-    resources :subrequests, only: [:show, :index]
+  resources :yogaclasses do
+    resources :subrequests, only: [:show, :index, :new, :edit]
   end
 
-  resources :yogaclasses, only: [:index, :edit, :new]
+  #resources :yogaclasses, only: [:index, :edit, :new]
   resources :subrequests
 
   #one of these will be nested-- get ready for thata

@@ -19,6 +19,16 @@ class SubrequestsController < ApplicationController
     @subrequests = Subrequest.all
   end
 
+  def update
+    render :edit
+  end
+
+
+	def destroy
+	#	find_reported_issue
+	#		@reported_issue.destroy
+	#		redirect_to reported_issues_path
+	end
 
   private
 
