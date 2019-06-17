@@ -1,4 +1,5 @@
 class YogaclassesController < ApplicationController
+  before_action :require_logged_in
 
   def index
     @yogaclasses = Yogaclass.all
