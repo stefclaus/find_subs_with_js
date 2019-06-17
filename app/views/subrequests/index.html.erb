@@ -4,5 +4,6 @@
   Comment: <%= subrequest.comment %><br>
   Date: <%= subrequest.date %><br>
   Assistant requesting: <%= subrequest.assistant_requesting %><br>
-  Assistant covering: <%= subrequest.assistant_covering %><br></br>
+  Assistant covering: <%= subrequest.assistant_covering %><br>
+  <%= link_to "Cover shift", edit_subrequest_path(subrequest) %><br></br>
 <% end %>

@@ -1,6 +1,12 @@
 <h1>Welcome, <%= @assistant.name %>!</h1>
 <br>
-<h2>Your Sub Requests:</h2>
+<h2>Your Pending Sub Requests:</h2>
+<% @assistant.subrequests.each do |subrequest| %>
+  Comment: <%= subrequest.comment %><br>
+  Date: <%= subrequest.date %><br>
+  Assistant requesting: <%= subrequest.assistant_requesting %><br>
+  Assistant covering: <%= subrequest.assistant_covering %><br></br>
+<% end %>
 <%= link_to "Request a sub", '/subrequests/new' %><br></br>
 <%= link_to "View and Claim Subrequests", '/subrequests' %><br></br>
 
