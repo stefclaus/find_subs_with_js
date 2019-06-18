@@ -8,6 +8,7 @@ class SubrequestsController < ApplicationController
 
   def create
     @subrequest = Subrequest.create(subrequest_params)
+    @subrequest.assistant_requesting = @subrequest.assistant.name
     redirect_to assistant_path(@assistant)
   end
 
@@ -20,12 +21,16 @@ class SubrequestsController < ApplicationController
   end
 
   def index
-    @subrequests = Subrequest.all
+    if params[:yogaclass_id]
+      @subrequest = Yogaclass.find(params[:yogaclass_id]).subrequests
+    else
+      @subrequests = Subrequest.all
+    end
   end
 
   def update
     @subrequest = Subrequest.find(params[:id])
-    render :edit
+    #render :edit
     redirect_to assistant_path(@assistant)
   end
 

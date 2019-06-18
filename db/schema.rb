@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_204209) do
 
   create_table "subrequests", force: :cascade do |t|
     t.string "comment"
-    t.date "date"
+    t.string "date"
     t.string "assistant_requesting"
     t.string "assistant_covering"
     t.integer "assistant_id"
