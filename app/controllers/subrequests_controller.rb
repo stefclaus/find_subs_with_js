@@ -7,7 +7,8 @@ class SubrequestsController < ApplicationController
   end
 
   def create
-    @subrequest = Subrequest.create(subrequest_params)
+    current_assistant.subrequests.build(subrequest_params).save
+  #  @subrequest = Subrequest.build(subrequest_params)
     redirect_to assistant_path(@assistant)
   end
 
@@ -29,6 +30,8 @@ class SubrequestsController < ApplicationController
 
   def update
     @subrequest = Subrequest.find(params[:id])
+    @subrequest.update(subrequest_params)
+
     #render :edit
     redirect_to assistant_path(@assistant)
   end

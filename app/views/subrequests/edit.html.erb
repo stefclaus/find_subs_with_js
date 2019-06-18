@@ -6,8 +6,8 @@ Comment: <%= @subrequest.comment %><br></br>
 
 <%= form_for @subrequest do |f| %>
 
-  <%= f.label :assistant_requesting, 'Enter your name here:' %>
-  <%= f.text_area :assistant_requesting, :value => @assistant.name %>
+  <%= f.label :assistant_covering, 'Enter your name here:' %>
+  <%= f.text_area :assistant_covering, :value => @assistant.name %>
 
 <%= f.submit 'Claim shift' %>
 	<% end %>
