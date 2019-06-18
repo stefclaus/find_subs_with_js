@@ -16,10 +16,13 @@ class AssistantsController < ApplicationController
       redirect_to "/"
     else
       @assistant = Assistant.find_by(id:params[:id])
+      #put something in here thaat will give this an instance of a subrequest to display
+      @subrequests = Assistant.find_by(id:params[:id]).subrequests
+
     end
 	end
 
-  
+
   private
 
   def assistant_params

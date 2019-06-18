@@ -1,3 +1,15 @@
-<h2>Claim Your Shift here!</h2>
+<h2>Claim The Shift!</h2>
+Class: <%= @subrequest.yogaclass.name %><br></br>
+Assistant requesting: <%= @subrequest.assistant_requesting %><br></br>
+Date: <%= @subrequest.date%><br></br>
+Comment: <%= @subrequest.comment %><br></br>
 
-<%= render 'form', subrequest: @subrequest %>
+<%= form_for @subrequest do |f| %>
+
+  <%= f.label :assistant_requesting, 'Enter your name here:' %>
+  <%= f.text_area :assistant_requesting, :value => @assistant.name %>
+
+<%= f.submit 'Claim shift' %>
+	<% end %>
+	<br>
+	<br>
