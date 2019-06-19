@@ -1,4 +1,5 @@
 <%= form_for @subrequest do |f| %>
+  <%= render partial: 'layouts/errors', locals: {object: @subrequest} %>
   <%= f.label :yogaclass_id, 'Select a Class:' %>
   <%= f.collection_select :yogaclass_id, Yogaclass.all, :id, :name,  { include_blank: true }%>
   <br>
