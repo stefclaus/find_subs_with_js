@@ -28,12 +28,17 @@ class SubrequestsController < ApplicationController
     end
   end
 
+  def edit
+    @subrequest = Subrequest.find(params[:id])
+  end
+
   def update
     @subrequest = Subrequest.find(params[:id])
     @subrequest.update(subrequest_params)
+    redirect_to subrequest_path(@subrequest)
 
     #render :edit
-    redirect_to assistant_path(@assistant)
+  #  redirect_to assistant_path(@assistant)
   end
 
 

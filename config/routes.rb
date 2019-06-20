@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   post '/logout' => 'sessions#destroy'
-  get '/auth/facebook/callback' => 'sessions#create'
+  get '/auth/facebook/callback' => 'sessions#fbcreate'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
