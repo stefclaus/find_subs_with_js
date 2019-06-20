@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_10_204209) do
+ActiveRecord::Schema.define(version: 2019_06_20_004538) do
 
   create_table "assistants", force: :cascade do |t|
     t.string "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_204209) do
 
   create_table "subrequests", force: :cascade do |t|
     t.string "comment"
-    t.string "date"
+    t.date "date"
     t.string "assistant_requesting"
     t.string "assistant_covering"
     t.integer "assistant_id"

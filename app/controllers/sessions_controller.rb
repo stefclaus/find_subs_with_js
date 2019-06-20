@@ -6,11 +6,17 @@ class SessionsController < ApplicationController
 
   def create
     @assistant = Assistant.find_by(email: params[:assistant][:email])
-    @assistant = @assistant.try(:authenticate, params[:assistant][:password])
-    return redirect_to root_path unless @assistant
-    session[:assistant_id] = @assistant.id
-    redirect_to assistant_path(@assistant)
+
+    if @assistant && @assistant.authenticate(params[:assistant][:password])
+      session[:assistant_id] = @assistant.id
+      redirect_to assistant_path(@assistant)
+    else
+      flash[:message] = "Sorry, please try again"
+      redirect_to login_path
+  #  @assistant = @assistant.try(:authenticate, params[:assistant][:password])
+#    return redirect_to root_path unless @assistant
   end
+
 
 
 
