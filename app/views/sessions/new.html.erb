@@ -4,7 +4,6 @@
   <%= flash[:message] %>
 <% end %>
 
-<%= link_to('Log in with Facebook!', '/auth/facebook') %>
 
 <%= form_for @assistant, url: signin_path, method: :post do |f| %>
   Email: <%= f.email_field :email %>
