@@ -4,7 +4,7 @@
   <%= f.collection_select :yogaclass_id, Yogaclass.all, :id, :name,  { include_blank: true }, required: true %>
   <br>
   <br>
-  <%= f.label :assistant_requesting, 'Who is covering this class?' %>
+  <%= f.label :assistant_requesting, 'Who is requesting this class be covered?' %>
   <%= f.text_area :assistant_requesting, :value => @assistant.name, required: true %>
   <br>
   <br>

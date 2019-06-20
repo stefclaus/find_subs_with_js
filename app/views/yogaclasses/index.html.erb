@@ -1,11 +1,10 @@
 <h2>Here is a list of all of the yogaclasses!</h2>
 
 <% @yogaclasses.each do |yogaclass| %>
-  <%= yogaclass.name %>
+  <%= link_to yogaclass.name, yogaclass_path(yogaclass) %>
   <%= yogaclass.time %>
   <%= yogaclass.weekday %>
   <%= yogaclass.instructor %>
-  <%= link_to "Go to class page", yogaclass_path(yogaclass) %><br></br>
-  <%= link_to "Go to subrequests for this class", yogaclass_subrequests_path(yogaclass) %>
+  <%= link_to "View subrequests for this class", yogaclass_subrequests_path(yogaclass) %><br></br>
 
 <% end %>
