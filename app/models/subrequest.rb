@@ -3,6 +3,11 @@ class Subrequest < ApplicationRecord
 	belongs_to :yogaclass
   validates :comment, :date, :assistant_covering, :assistant_requesting, :yogaclass_id, presence: true
 
+#  scope :today_and_future, lambda {
+#      {
+#        :conditions => ["date >= ?", Time.zone.now.beginning_of_day]
+#      }
+#    }
 #  scope :is_in_future, -> (date){ where("date = ?", date > today) }
 # scope :today, lambda { WHERE('DATE(created_at) = ?', Date.today)}
 

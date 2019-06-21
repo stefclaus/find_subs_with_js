@@ -13,6 +13,7 @@ class SubrequestsController < ApplicationController
   end
 
   def show
+
     @subrequest = Subrequest.find(params[:id])
   end
 
@@ -25,6 +26,7 @@ class SubrequestsController < ApplicationController
       @subrequests = Yogaclass.find(params[:yogaclass_id]).subrequests
     else
       @subrequests = Subrequest.all
+
     end
   end
 
