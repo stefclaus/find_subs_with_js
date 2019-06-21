@@ -6,6 +6,7 @@ class Assistant < ApplicationRecord
 	has_many :subrequests
 	has_many :yogaclasses, through: :subrequests
 
+
 	has_secure_password
 
 end
