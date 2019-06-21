@@ -18,7 +18,8 @@ class AssistantsController < ApplicationController
       @assistant = Assistant.find_by(id:params[:id])
       #put something in here thaat will give this an instance of a subrequest to display
       #@subrequests = Assistant.find_by(id:params[:id]).subrequests
-      @subrequests = @assistant.subrequests
+      @subrequests = Subrequest.all.created_before(params[:date])
+
     end
 	end
 
