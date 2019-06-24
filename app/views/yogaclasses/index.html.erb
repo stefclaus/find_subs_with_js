@@ -5,6 +5,7 @@
   <%= yogaclass.time %>
   <%= yogaclass.weekday %>
   <%= yogaclass.instructor %>
-  <%= link_to "View subrequests for this class", yogaclass_subrequests_path(yogaclass) %><br></br>
+  <%= link_to "View subrequests for this class", yogaclass_subrequests_path(yogaclass) %>
+  <%= link_to "Request a sub for this class", new_yogaclass_subrequest_path(yogaclass) %><br></br>
 
 <% end %>

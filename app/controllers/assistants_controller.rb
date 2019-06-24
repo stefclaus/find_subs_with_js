@@ -19,6 +19,13 @@ class AssistantsController < ApplicationController
       #put something in here thaat will give this an instance of a subrequest to display
       #@subrequests = Assistant.find_by(id:params[:id]).subrequests
       @subrequests = @assistant.subrequests.all.created_before(params[:date])
+      @yourshifts = []
+
+      @subrequests.each do |subrequest|
+        if subrequest.assistant_covering == @assistant.name
+          @yourshifts << subrequest
+        end
+      end
 
     end
 	end

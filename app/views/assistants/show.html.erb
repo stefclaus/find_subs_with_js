@@ -1,3 +1,5 @@
+<br>
+
 <h1>Welcome, <%= @assistant.name %>!</h1>
 <br>
 <h2>Your Pending Sub Requests:</h2>
@@ -10,10 +12,17 @@
 <% end %>
 
 <h2>Classes You've Signed up to sub:</h2>
-
+<% @yourshifts.each do |subrequest| %>
+  Yoga class: <%= subrequest.yogaclass.name %>
+  Comment: <%= subrequest.comment %><br>
+  Date: <%= subrequest.date %><br>
+  Assistant requesting: <%= subrequest.assistant_requesting %><br>
+  Assistant covering: <%= subrequest.assistant_covering %><br></br>
+<% end %>
 
 
 <%= link_to "Request a sub", '/subrequests/new' %><br></br>
 <%= link_to "View and Claim Subrequests", '/subrequests' %><br></br>
+<%= link_to "View Yoga Classes", '/yogaclasses' %><br></br>
 
 <ul>
