@@ -7,18 +7,27 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
+ruby-2.6.1
 
-* Configuration
+* All dependencies can be located in the Gemfile.
+To install, run
 
-* Database creation
+$ bundle install
+
 
 * Database initialization
 
-* How to run the test suite
+This app was built using Sqlite3. To get started, run
 
-* Services (job queues, cache servers, search engines, etc.)
+$ rake db:migrate
 
-* Deployment instructions
+and
 
-* ...
+$ rake db:seed
+
+
+
+* Usage
+
+This app helps you both put schedule shifts up for bidding and volunteer for other
+assistant's shifts.

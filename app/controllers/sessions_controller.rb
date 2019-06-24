@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     else
       flash[:message] = "Sorry, please try again"
       redirect_to '/signin'
-    @assistant = @assistant.try(:authenticate, params[:assistant][:password])
+      @assistant = @assistant.try(:authenticate, params[:assistant][:password])
     end
   end
 
