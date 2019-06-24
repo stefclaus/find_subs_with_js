@@ -10,8 +10,13 @@
   Assistant requesting: <%= subrequest.assistant_requesting %><br>
   Assistant covering: <%= subrequest.assistant_covering %><br></br>
 <% end %>
-
-<h2>Classes You've Signed up to sub:</h2>
+<% if @subrequests.count == 0 %>
+  <br>
+  You don't have any pending requests!
+  <br>
+<% end %>
+<br>
+<h2>Classes you've signed up to sub:</h2>
 <% @yourshifts.each do |subrequest| %>
   Yoga class: <%= subrequest.yogaclass.name %>
   Comment: <%= subrequest.comment %><br>
@@ -19,8 +24,13 @@
   Assistant requesting: <%= subrequest.assistant_requesting %><br>
   Assistant covering: <%= subrequest.assistant_covering %><br></br>
 <% end %>
+<% if @yourshifts.count == 0 %>
+  <br>
+  You are not signed up for any shifts!
+<% end %>
 
-
+<br>
+<br>
 <%= link_to "Request a sub", '/subrequests/new' %><br></br>
 <%= link_to "View and Claim Subrequests", '/subrequests' %><br></br>
 <%= link_to "View Yoga Classes", '/yogaclasses' %><br></br>
