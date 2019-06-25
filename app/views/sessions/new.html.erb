@@ -6,9 +6,6 @@
 
 
 <%= form_for @assistant, url: signin_path, method: :post do |f| %>
-<% if flash[:message] %>
-  	<div class='message'><%= flash[:message] %></div>
-	<% end %>
   Email: <%= f.email_field :email %>
   Password: <%= f.password_field :password, id: 'password' %>
   <%= f.submit "Sign In" %>
