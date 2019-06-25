@@ -4,7 +4,13 @@ class AssistantsController < ApplicationController
     @assistant = Assistant.new
   end
 
-
+  def index
+    if !logged_in?
+      redirect_to '/'
+    else
+      @assistants = Assistant.all
+    end
+  end
 
   def create
     @assistant = Assistant.create(assistant_params)

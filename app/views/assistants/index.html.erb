@@ -1,1 +1,10 @@
 <h2>Here is a list of all of the assistants!</h2>
+
+
+<% @assistants.each do |assitant| %>
+  <%=  assitant.name %>
+<br></br>
+
+<% end %>
+
+<h3><%= link_to "Go to your profile", assistant_path(@assistant) %></h3>
