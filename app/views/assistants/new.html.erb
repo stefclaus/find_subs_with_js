@@ -1,5 +1,10 @@
 <h2>Studio Assistant Sign Up!</h2>
 
+<% if flash[:message] %>
+  	<div class='message'><%= flash[:message] %></div>
+	<% end %>
+
+
 <%= form_for @assistant do |f| %>
   Name: <%= f.text_field :name %><br></br>
   Email: <%= f.text_field :email %><br></br>

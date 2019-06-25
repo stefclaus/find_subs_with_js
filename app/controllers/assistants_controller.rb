@@ -14,7 +14,7 @@ class AssistantsController < ApplicationController
       redirect_to assistant_path(@assistant)
     else
       flash[:message] = "Sorry, please try again. You must enter a password, username, and email."
-      redirect_to root_path
+      redirect_to '/assistants/new'
     end
   end
 
