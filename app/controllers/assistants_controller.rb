@@ -4,11 +4,18 @@ class AssistantsController < ApplicationController
     @assistant = Assistant.new
   end
 
+
+
   def create
     @assistant = Assistant.create(assistant_params)
-    return redirect_to root_path unless @assistant.save
-    session[:assistant_id] = @assistant.id
-    redirect_to assistant_path(@assistant)
+
+    if @assistant.save
+      session[:assistant_id] = @assistant.id
+      redirect_to assistant_path(@assistant)
+    else
+      flash[:message] = "Sorry, please try again. You must enter a password, username, and email."
+      redirect_to root_path
+    end
   end
 
   def show
