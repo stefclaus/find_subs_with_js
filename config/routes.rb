@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   #resources :yogaclasses, only: [:index, :edit, :new]
   resources :subrequests, only: [:index, :show, :new, :create, :edit, :update]
 
+  #get '/auth/facebook/callback', to:  'sessions#fbcreate'
+  #get '/categories/:id/next', to: 'categories#next'
+
+  #
   #one of these will be nested-- get ready for thata
 
   #will need the facebook authorization with this as well
