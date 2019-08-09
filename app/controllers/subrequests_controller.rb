@@ -8,13 +8,20 @@ class SubrequestsController < ApplicationController
 
   def create
     current_assistant.subrequests.build(subrequest_params).save
+      respond_to do |format|
+        format.html {redirect_to assistant_path(@assistant)}
   #  @subrequest = Subrequest.build(subrequest_params)
-    redirect_to assistant_path(@assistant)
+        format.json { render json: @subrequest}
+      end
   end
 
   def show
-
     @subrequest = Subrequest.find(params[:id])
+      respond_to do |format|
+        format.html
+        format.json {render json: @subrequest}
+      end
+
   end
 
   def edit
@@ -36,7 +43,11 @@ class SubrequestsController < ApplicationController
   def update
     @subrequest = Subrequest.find(params[:id])
     @subrequest.update(subrequest_params)
-    redirect_to subrequest_path(@subrequest)
+    respond_to do |format|
+      format.html {redirect_to subrequest_path(@subrequest)}
+      format.json {render json: @subrequest}
+    end
+
 
     #render :edit
   #  redirect_to assistant_path(@assistant)
