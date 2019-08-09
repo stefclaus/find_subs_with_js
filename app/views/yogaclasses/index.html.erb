@@ -2,8 +2,20 @@
 
 <% @yogaclasses.each do |yogaclass| %>
   <%= link_to yogaclass.name, yogaclass_path(yogaclass) %>
-  <%= yogaclass.instructor %>
-  <%= link_to "View subrequests for this class", yogaclass_subrequests_path(yogaclass) %>
-  <%= link_to "Request a sub for this class", new_yogaclass_subrequest_path(yogaclass) %><br></br>
-
+  <button class="js-more" data-id=<%= yogaclass.id %>"> More Class Info</button>
+  <br>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+$(function() {
+  $(".js-more").on("click", function() {
+    var id = $(this).data("id");
+    $.get("/yogaclasses/" + id + ".json", function(data) {
+      var yogaclass = data;
+      var instructor = yogaclass["instructor"];
+      var weekday = yogaclass["weekday"];
+      var time = yogaclass["time"];
+    });
+  });
+});
+</script>
