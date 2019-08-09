@@ -8,6 +8,10 @@ class YogaclassesController < ApplicationController
 
   def show
     @yogaclass = Yogaclass.find(params[:id])
+    respond_to do |format|
+      format.html { render :show}
+      format.html { render json: @yogaclass}
+    end 
    #@ride = @attraction.rides.build(user_id:current_user.id)
   end
 
