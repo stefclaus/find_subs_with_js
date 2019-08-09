@@ -43,5 +43,3 @@ class YogaclassesController < ApplicationController
       params.require(:yogaclass).permit(:instructor, :weekday, :time)
     end
   end
-
-end
