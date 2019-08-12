@@ -1,5 +1,5 @@
 class SubrequestSerializer < ActiveModel::Serializer
-  attributes :id, :chief_complaint, :transportation_type, :street_address, :locality, :region, :postal_code, :user_id, :category_id
+  attributes :id, :comment, :date, :assistant_covering, :assistant_requesting, :assistant_id, :yogaclass_id
 
   belongs_to :yogaclass
   belongs_to :assistant

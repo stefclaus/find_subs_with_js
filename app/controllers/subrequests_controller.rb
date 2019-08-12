@@ -2,6 +2,15 @@ class SubrequestsController < ApplicationController
 
   before_action :require_logged_in
 
+  def index
+    if params[:yogaclass_id]
+      @subrequests = Yogaclass.find(params[:yogaclass_id]).subrequests.all.created_before(params[:date])
+    else
+      @subrequests = Subrequest.all.created_before(params[:date])
+    end
+  end
+
+   
   def new
     @subrequest = Subrequest.new
   end
@@ -28,17 +37,7 @@ class SubrequestsController < ApplicationController
     @subrequest = Subrequest.find(params[:id])
   end
 
-  def index
-    if params[:yogaclass_id]
-      @subrequests = Yogaclass.find(params[:yogaclass_id]).subrequests.all.created_before(params[:date])
-    else
-      @subrequests = Subrequest.all.created_before(params[:date])
-    end
-  end
 
-  def edit
-    @subrequest = Subrequest.find(params[:id])
-  end
 
   def update
     @subrequest = Subrequest.find(params[:id])

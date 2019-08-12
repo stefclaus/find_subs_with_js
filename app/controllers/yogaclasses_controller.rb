@@ -3,15 +3,19 @@ class YogaclassesController < ApplicationController
 
   def index
     @yogaclasses = Yogaclass.all
+      respond_to do |format|
+        format.html
+        format.json { render json: @yogaclasses }
+      end
 
   end
 
   def show
     @yogaclass = Yogaclass.find(params[:id])
-    respond_to do |format|
-      format.html { render :show }
-      format.json { render json: @yogaclass }
-    end
+  #  respond_to do |format|
+  #    format.html { render :show }
+  #    format.json { render json: @yogaclass }
+  #  end
   end
 
 

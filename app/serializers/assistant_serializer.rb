@@ -1,5 +1,5 @@
 class AssistantSerializer < ActiveModel::Serializer
-  attributes :id, :comment, :date, :assistant_covering, :assistant_requesting
+  attributes :id, :name, :email
 
   has_many :subrequests
 	has_many :yogaclasses, through: :subrequests
