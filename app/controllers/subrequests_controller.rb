@@ -10,7 +10,7 @@ class SubrequestsController < ApplicationController
     end
   end
 
-   
+
   def new
     @subrequest = Subrequest.new
   end
@@ -26,11 +26,6 @@ class SubrequestsController < ApplicationController
 
   def show
     @subrequest = Subrequest.find(params[:id])
-      respond_to do |format|
-        format.html
-        format.json {render json: @subrequest}
-      end
-
   end
 
   def edit

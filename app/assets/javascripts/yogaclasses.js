@@ -18,6 +18,18 @@ const bindingClickHandlers = () => {
       })
     })
   })
+  $(document).on('click', ".show_link", function(e) {
+    e.preventDefault()
+    $('#app-container').html('')
+    let id = $(this).attr('data-id')
+    fetch(`/yogaclasses/${id}.json`)
+    .then(res => res.json())
+    .then(yogaclass => {
+      let newYogaclass = new Yogaclass(yogaclass)
+      let yogaclassHtml = newYogaclass.formatShow()
+      $('#app-container').append(yogaclassHtml)
+    })
+  })
 }
 
 function Yogaclass(yogaclass) {
@@ -29,6 +41,12 @@ function Yogaclass(yogaclass) {
 
 Yogaclass.prototype.formatIndex = function(){
   let yogaclassHtml = `
-  <a hfref="/yogaclasses/${this.id}"><h1>${this.name}</h1>`
+  <a href="/yogaclasses/${this.id}" data-id="${this.id}" class="show_link"><h1>${this.name}</h1>`
+  return yogaclassHtml
+}
+
+Yogaclass.prototype.formatShow = function(){
+  let yogaclassHtml = `
+  <h3>${this.name}</h3>`
   return yogaclassHtml
 }

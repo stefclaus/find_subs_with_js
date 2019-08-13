@@ -12,10 +12,10 @@ class YogaclassesController < ApplicationController
 
   def show
     @yogaclass = Yogaclass.find(params[:id])
-  #  respond_to do |format|
-  #    format.html { render :show }
-  #    format.json { render json: @yogaclass }
-  #  end
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @yogaclass }
+    end
   end
 
 
