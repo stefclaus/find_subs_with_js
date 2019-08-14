@@ -31,6 +31,25 @@ const bindingClickHandlers = () => {
       $('#app-container').append(yogaclassHtml)
     })
   })
+  $('#new_subrequest').on('submit', function(e) {
+		e.preventDefault();
+    const values = $(this).serialize()
+
+    $.post("/subrequests", values).done(function(data) {
+        $('#app-container').html('')
+        const newSubrequest = new Subrequest(data)
+        const htmlToAdd = newSubrequest.formatShow()
+        $("#app-container").html(htmlToAdd)
+      })
+  })
+}
+
+function Subrequest(subrequest) {
+  this.id = subrequest.id
+  this.date = subrequest.date
+  this.assistant_requesting = subrequest.assistant_requesting
+  this.assistant_covering = subrequest. assistant_covering
+  this.comment = subrequest.comment
 }
 
 function Yogaclass(yogaclass) {
@@ -62,6 +81,20 @@ Yogaclass.prototype.formatShow = function(){
   `
   <h1>${this.name}</h1>
   ${yogaclassesHtml}
+  `
+
+  return subrequestHtml
+}
+
+Subrequest.prototype.formatShow = function(){
+
+  let subrequestHtml =
+  `
+  <h1>${this.comment}</h1>
+  <h1>${this.assistant_covering}</h1>
+  <h1>${this.assistant_requesting}</h1>
+  <h1>${this.date}</h1>
+
   `
 
   return subrequestHtml

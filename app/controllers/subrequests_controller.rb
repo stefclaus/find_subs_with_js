@@ -16,11 +16,11 @@ class SubrequestsController < ApplicationController
   end
 
   def create
-    current_assistant.subrequests.build(subrequest_params).save
-      respond_to do |format|
-        format.html {redirect_to assistant_path(@assistant)}
-  #  @subrequest = Subrequest.build(subrequest_params)
-        format.json { render json: @subrequest}
+    @subrequest = current_assistant.subrequests.build(subrequest_params)
+      if @subrequest.save
+        render json: @subrequest
+      else
+        render 'new'
       end
   end
 
