@@ -20,6 +20,7 @@ const bindingClickHandlers = () => {
   })
   $(document).on('click', ".show_link", function(e) {
     e.preventDefault()
+    history.pushState(null, null, `yogaclasses/thisclass`)
     $('#app-container').html('')
     let id = $(this).attr('data-id')
     fetch(`/yogaclasses/${id}.json`)
