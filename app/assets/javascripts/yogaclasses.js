@@ -49,11 +49,11 @@ Yogaclass.prototype.formatIndex = function(){
 }
 
 Yogaclass.prototype.formatShow = function(){
-  let yogaclassesHtml = ``
+  let yogaclassesHtml = `Subrequests for this class:`
   this.subrequests.forEach( subrequest => {
     yogaclassesHtml += `
     <ul>
-      <li> ${subrequest.comment}<br>${subrequest.date} </li>
+      <li> Assistant covering: ${subrequest.assistant_covering}<br>Assistant requesting: ${subrequest.assistant_requesting}<br>Comment:${subrequest.comment}<br>Class date:${subrequest.date} </li>
     </ul>`
   })
 
@@ -64,23 +64,4 @@ Yogaclass.prototype.formatShow = function(){
   `
 
   return subrequestHtml
-}
-
-Category.prototype.formatShow = function() {
-
-	let reportedIssuesHtml = ``
-		this.reported_issues.forEach( issue => {
-			reportedIssuesHtml += `
-				<ul>
-					<li>${issue.chief_complaint}<br>${issue.locality}, ${issue.region} ${issue.postal_code}</li>
-				</ul>
-			`
-	})
-
-	let categoryHtml =
-	`
-		<h1>${this.name}</h1>
-		${reportedIssuesHtml}
-	`
-	return categoryHtml
 }
