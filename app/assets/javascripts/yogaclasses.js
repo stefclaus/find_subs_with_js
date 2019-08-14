@@ -37,16 +37,17 @@ function Yogaclass(yogaclass) {
   this.name = yogaclass.name
   this.weekday = yogaclass.weekday
   this.instructor = yogaclass. instructor
+  this.time = yogaclass.time
 }
 
 Yogaclass.prototype.formatIndex = function(){
   let yogaclassHtml = `
-  <a href="/yogaclasses/${this.id}" data-id="${this.id}" class="show_link"><h1>${this.name}</h1>`
+  <a href="/yogaclasses/${this.id}" data-id="${this.id}" class="show_link"><h1>${this.name}</h1></a><p>${this.instructor}</p><p>${this.weekday}</p><p>${this.time}</p>`
   return yogaclassHtml
 }
 
 Yogaclass.prototype.formatShow = function(){
   let yogaclassHtml = `
-  <h3>${this.name}</h3>`
+  <h3>${this.name}</h3><p></p>`
   return yogaclassHtml
 }
