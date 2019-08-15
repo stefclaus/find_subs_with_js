@@ -90,12 +90,12 @@ Subrequest.prototype.formatShow = function(){
 
   let subrequestHtml =
   `
-  <h1>${this.comment}</h1>
+  <h1>Request successful!</h1>
+  <h1>Your Submitted request:</h1>
+  <h1>Comment: ${this.comment}</h1>
   <h1>${this.assistant_covering}</h1>
   <h1>${this.assistant_requesting}</h1>
   <h1>${this.date}</h1>
-
   `
-
   return subrequestHtml
 }
