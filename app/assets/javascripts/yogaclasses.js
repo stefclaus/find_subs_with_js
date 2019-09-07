@@ -42,8 +42,28 @@ const bindingClickHandlers = () => {
         $("#app-container").html(htmlToAdd)
       })
   })
-}
+  $("#sort").on('click', function(e){
+    fetch(`/yogaclasses.json`)
+      .then(response => response.json())
+      .then(data => {
+        debugger;
+        $('#app-container').html(`<h1> All Classes </h1>`)
+        data.forEach(yogaclass => {
+          let newYogaclass = new Yogaclass(yogaclass)
+          let yogaclassHtml = newYogaclass.formatIndex()
+          $('#app-container').append(yogaclassHtml)
+        })
 
+      })
+    })
+    //next steps: make a new fetch request to grab aall of our yogaclasses
+
+    //then use .sort method ttto sort yogaclasses by title
+    //then display sorted data to the dom
+
+
+}
+//
 function Subrequest(subrequest) {
   this.id = subrequest.id
   this.date = subrequest.date
