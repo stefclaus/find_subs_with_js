@@ -46,9 +46,13 @@ const bindingClickHandlers = () => {
     fetch(`/yogaclasses.json`)
       .then(response => response.json())
       .then(data => {
-        debugger;
+         let sortedData = data.slice().sort(function (yogaclassOne, yogaclassTwo) {
+          return yogaclassOne.name.localeCompare(yogaclassTwo.name);
+
+        });
+
         $('#app-container').html(`<h1> All Classes </h1>`)
-        data.forEach(yogaclass => {
+        sortedData.forEach(yogaclass => {
           let newYogaclass = new Yogaclass(yogaclass)
           let yogaclassHtml = newYogaclass.formatIndex()
           $('#app-container').append(yogaclassHtml)
@@ -56,6 +60,8 @@ const bindingClickHandlers = () => {
 
       })
     })
+
+
     //next steps: make a new fetch request to grab aall of our yogaclasses
 
     //then use .sort method ttto sort yogaclasses by title
