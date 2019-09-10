@@ -1,7 +1,26 @@
 
 $(() => {
   bindingClickHandlers()
+  pilatesClickHandler()
 })
+
+const pilatesClickHandler = () => {
+  $('#pilates').on('click', function(e) {
+    fetch(`/yogaclasses.json`)
+    .then(response => response.json())
+    .then(data => {
+      const pilatesFilter = data.filter(yogaclass => yogaclass.name == 'Pilates');
+      $('#app-container').html(`<h1> All Classes </h1>`)
+      pilatesFilter.forEach(yogaclass => {
+        let newYogaclass = new Yogaclass(yogaclass)
+        let yogaclassHtml = newYogaclass.formatIndex()
+        $('#app-container').append(yogaclassHtml)
+      })
+  })
+  })
+}
+
+
 
 const bindingClickHandlers = () => {
   $('.all-yogaclasses').on('click', (e) => {
@@ -61,11 +80,6 @@ const bindingClickHandlers = () => {
       })
     })
 
-
-    //next steps: make a new fetch request to grab aall of our yogaclasses
-
-    //then use .sort method ttto sort yogaclasses by title
-    //then display sorted data to the dom
 
 
 }
